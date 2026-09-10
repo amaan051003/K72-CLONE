@@ -11,6 +11,13 @@ body {
   color: white;
   overflow-x: hidden;
 }
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
 .moveX {
   animation-name: moveAnimation;
   animation-duration: 10s;
