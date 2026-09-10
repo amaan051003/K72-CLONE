@@ -7,9 +7,24 @@
   font-family: font500;
   src: url(/Fonts/Lausanne-500.woff2);
 }
+
 body {
   color: white;
   overflow-x: hidden;
+}
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+.custom-scrollbar {
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 .moveX {
   animation-name: moveAnimation;

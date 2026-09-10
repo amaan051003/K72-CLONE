@@ -9,12 +9,12 @@ const ProjectModal = ({ project, onClose }) => {
     gsap.fromTo(
       "#modal-backdrop",
       { opacity: 0 },
-      { opacity: 1, duration: 0.3, ease: "power2.out" }
+      { opacity: 1, duration: 0.3, ease: "power2.out" },
     );
     gsap.fromTo(
       "#modal-panel",
       { y: "100%" },
-      { y: "0%", duration: 0.5, ease: "power3.out" }
+      { y: "0%", duration: 0.5, ease: "power3.out" },
     );
 
     return () => {
@@ -45,15 +45,26 @@ const ProjectModal = ({ project, onClose }) => {
       {/* Slide-Up Panel */}
       <div
         id="modal-panel"
-        className="relative z-10 w-full max-w-6xl max-h-[90vh] overflow-y-auto bg-neutral-950 border-t md:border border-white/20 rounded-t-3xl md:rounded-3xl p-6 md:p-12 text-white shadow-2xl custom-scrollbar"
+        data-lenis-prevent
+        className="relative bottom-9 z-10 w-full max-w-6xl max-h-[90vh] overflow-y-auto bg-neutral-950 border-t md:border border-white/20 rounded-t-3xl md:rounded-3xl p-6 md:p-12 text-white shadow-2xl custom-scrollbar"
       >
         {/* Close Button */}
         <button
           onClick={handleClose}
           className="absolute top-6 right-6 h-12 w-12 rounded-full bg-white/10 hover:bg-[#D3FD50] hover:text-black flex items-center justify-center transition-all duration-300 z-20 cursor-pointer"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
 
@@ -78,21 +89,33 @@ const ProjectModal = ({ project, onClose }) => {
 
         {/* Hero Image */}
         <div className="w-full h-[300px] md:h-[500px] rounded-2xl overflow-hidden mb-10 border border-white/10">
-          <img className="w-full h-full object-cover" src={project.image} alt={project.title} />
+          <img
+            className="w-full h-full object-cover"
+            src={project.image}
+            alt={project.title}
+          />
         </div>
 
         {/* Project Details Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 border-y border-white/10 py-8">
           <div>
-            <h4 className="text-xs uppercase text-gray-400 font-semibold mb-1">Client</h4>
+            <h4 className="text-xs uppercase text-gray-400 font-semibold mb-1">
+              Client
+            </h4>
             <p className="text-lg font-medium">{project.title} Canada</p>
           </div>
           <div>
-            <h4 className="text-xs uppercase text-gray-400 font-semibold mb-1">Services</h4>
-            <p className="text-lg font-medium">{project.category || "Branding"}, Identity, Web</p>
+            <h4 className="text-xs uppercase text-gray-400 font-semibold mb-1">
+              Services
+            </h4>
+            <p className="text-lg font-medium">
+              {project.category || "Branding"}, Identity, Web
+            </p>
           </div>
           <div>
-            <h4 className="text-xs uppercase text-gray-400 font-semibold mb-1">Agency</h4>
+            <h4 className="text-xs uppercase text-gray-400 font-semibold mb-1">
+              Agency
+            </h4>
             <p className="text-lg font-medium">K72 Agency Montreal</p>
           </div>
         </div>
@@ -100,10 +123,15 @@ const ProjectModal = ({ project, onClose }) => {
         {/* Case Study Narrative */}
         <div className="space-y-6 text-gray-300 font-[font300] leading-relaxed text-base md:text-lg max-w-4xl">
           <p>
-            When {project.title} approached K72, the objective was clear: redefine their market narrative with friction and raw authenticity. We engineered a holistic brand system that bridges strategy, graphic identity, and high-impact digital messaging.
+            When {project.title} approached K72, the objective was clear:
+            redefine their market narrative with friction and raw authenticity.
+            We engineered a holistic brand system that bridges strategy, graphic
+            identity, and high-impact digital messaging.
           </p>
           <p>
-            By disrupting conventional visual codes in the industry, the campaign generated immediate engagement across digital and out-of-home platforms.
+            By disrupting conventional visual codes in the industry, the
+            campaign generated immediate engagement across digital and
+            out-of-home platforms.
           </p>
         </div>
       </div>

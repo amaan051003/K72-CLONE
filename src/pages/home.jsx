@@ -1,7 +1,7 @@
 import React from "react";
 import Vidio from "../components/home/vidio";
 import Homeherotext from "../components/home/homeherotext";
-import Homebottomtext from "../components/home/Homebottomtext";
+import Homebottomtext from "../components/home/homebottomtext";
 
 const Home = () => {
   return (
@@ -19,11 +19,12 @@ const Home = () => {
         <div className="w-full flex justify-end my-8 md:my-12">
           <div className="w-full md:w-5/12 text-right md:text-left font-[font300]">
             <p className="text-sm md:text-base lg:text-lg leading-relaxed text-gray-300 backdrop-blur-xs p-4 rounded-xl bg-black/20 border border-white/5">
-              <span className="text-[#D3FD50] font-semibold">K72</span> is an agency that builds brands from
-              every angle. Today, tomorrow and years from now. We think the best
-              sparks fly when comfort zones get left behind and friction infuses
-              our strategies, brands and communications with real feeling. We’re
-              transparent, honest and say what we mean.
+              <span className="text-[#D3FD50] font-semibold">K72</span> is an
+              agency that builds brands from every angle. Today, tomorrow and
+              years from now. We think the best sparks fly when comfort zones
+              get left behind and friction infuses our strategies, brands and
+              communications with real feeling. We’re transparent, honest and
+              say what we mean.
             </p>
           </div>
         </div>
