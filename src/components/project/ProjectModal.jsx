@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
-
 const ProjectModal = ({ project, onClose }) => {
   useEffect(() => {
     if (!project) return;
     document.body.style.overflow = "hidden";
-
     gsap.fromTo(
       "#modal-backdrop",
       { opacity: 0 },
@@ -16,14 +14,11 @@ const ProjectModal = ({ project, onClose }) => {
       { y: "100%" },
       { y: "0%", duration: 0.5, ease: "power3.out" },
     );
-
     return () => {
       document.body.style.overflow = "";
     };
   }, [project]);
-
   if (!project) return null;
-
   const handleClose = () => {
     gsap.to("#modal-panel", { y: "100%", duration: 0.4, ease: "power3.in" });
     gsap.to("#modal-backdrop", {
@@ -32,23 +27,18 @@ const ProjectModal = ({ project, onClose }) => {
       onComplete: onClose,
     });
   };
-
   return (
     <div className="fixed inset-0 z-[10000] flex items-end justify-center">
-      {/* Backdrop */}
       <div
         id="modal-backdrop"
         onClick={handleClose}
         className="absolute inset-0 bg-black/80 backdrop-blur-md cursor-pointer"
       />
-
-      {/* Slide-Up Panel */}
       <div
         id="modal-panel"
         data-lenis-prevent
         className="relative bottom-9 z-10 w-full max-w-6xl max-h-[90vh] overflow-y-auto bg-neutral-950 border-t md:border border-white/20 rounded-t-3xl md:rounded-3xl p-6 md:p-12 text-white shadow-2xl custom-scrollbar"
       >
-        {/* Close Button */}
         <button
           onClick={handleClose}
           className="absolute top-6 right-6 h-12 w-12 rounded-full bg-white/10 hover:bg-[#D3FD50] hover:text-black flex items-center justify-center transition-all duration-300 z-20 cursor-pointer"
@@ -67,8 +57,6 @@ const ProjectModal = ({ project, onClose }) => {
             />
           </svg>
         </button>
-
-        {/* Modal Header */}
         <div className="mb-8">
           <div className="flex flex-wrap gap-3 mb-4">
             <span className="px-4 py-1 rounded-full text-xs font-semibold uppercase bg-[#D3FD50] text-black">
@@ -78,16 +66,13 @@ const ProjectModal = ({ project, onClose }) => {
               {project.year || "2024"}
             </span>
           </div>
-
-          <h2 className="text-4xl md:text-7xl font-[font500] uppercase tracking-wide text-white">
+          <h2 className="text-4xl md:text-7xl font-medium uppercase tracking-wide text-white">
             {project.title}
           </h2>
-          <p className="text-xl text-[#D3FD50] mt-2 font-[font300]">
+          <p className="text-xl text-[#D3FD50] mt-2 font-light">
             {project.subtitle || "Brand Strategy & Communications"}
           </p>
         </div>
-
-        {/* Hero Image */}
         <div className="w-full h-[300px] md:h-[500px] rounded-2xl overflow-hidden mb-10 border border-white/10">
           <img
             className="w-full h-full object-cover"
@@ -95,8 +80,6 @@ const ProjectModal = ({ project, onClose }) => {
             alt={project.title}
           />
         </div>
-
-        {/* Project Details Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 border-y border-white/10 py-8">
           <div>
             <h4 className="text-xs uppercase text-gray-400 font-semibold mb-1">
@@ -119,9 +102,7 @@ const ProjectModal = ({ project, onClose }) => {
             <p className="text-lg font-medium">K72 Agency Montreal</p>
           </div>
         </div>
-
-        {/* Case Study Narrative */}
-        <div className="space-y-6 text-gray-300 font-[font300] leading-relaxed text-base md:text-lg max-w-4xl">
+        <div className="space-y-6 text-gray-300 font-light leading-relaxed text-base md:text-lg max-w-4xl">
           <p>
             When {project.title} approached K72, the objective was clear:
             redefine their market narrative with friction and raw authenticity.
@@ -138,5 +119,4 @@ const ProjectModal = ({ project, onClose }) => {
     </div>
   );
 };
-
 export default ProjectModal;

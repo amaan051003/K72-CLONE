@@ -1,17 +1,16 @@
 import React from "react";
-
 const Vidio = () => {
   return (
-    <div>
+    <div className="h-full w-full">
       <video
-        className="h-full w-full"
+        className="h-full w-full object-cover"
         autoPlay
         loop
         muted
+        playsInline
         src="/bgvideo.mp4"
       ></video>
     </div>
   );
 };
-
 export default Vidio;

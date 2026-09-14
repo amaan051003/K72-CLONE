@@ -1,13 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Navbarcontext } from "../../context/Navcontext";
-
 const Navbar = () => {
   const [navOpen, setnavOpen] = useContext(Navbarcontext);
-
   return (
     <div className="z-[90] flex fixed top-0 left-0 w-full justify-between items-center px-4 md:px-8 py-4 pointer-events-none">
-      {/* Brand Logo */}
       <Link
         to="/"
         data-cursor="hover"
@@ -25,8 +22,6 @@ const Navbar = () => {
           ></path>
         </svg>
       </Link>
-
-      {/* Menu Button */}
       <div
         data-cursor="hover"
         data-cursor-text="MENU"
@@ -47,5 +42,4 @@ const Navbar = () => {
     </div>
   );
 };
-
 export default Navbar;

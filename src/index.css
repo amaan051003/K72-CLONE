@@ -1,4 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  --font-light: font300, sans-serif;
+  --font-medium: font500, sans-serif;
+}
 @font-face {
   font-family: font300;
   src: url(/Fonts/Lausanne-300.woff2);

@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
-
 const CustomCursor = () => {
   const [cursorText, setCursorText] = useState("");
   const [cursorVariant, setCursorVariant] = useState("default");
-
   useEffect(() => {
     const cursor = document.getElementById("custom-cursor");
-
     if (!cursor) return;
-
     const onMouseMove = (e) => {
       gsap.to(cursor, {
         x: e.clientX,
@@ -18,7 +14,6 @@ const CustomCursor = () => {
         ease: "power2.out",
       });
     };
-
     const onPointerOver = (e) => {
       const target = e.target.closest("[data-cursor]");
       if (target) {
@@ -34,16 +29,13 @@ const CustomCursor = () => {
         setCursorText("");
       }
     };
-
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseover", onPointerOver);
-
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mouseover", onPointerOver);
     };
   }, []);
-
   const getVariantStyles = () => {
     switch (cursorVariant) {
       case "project":
@@ -56,7 +48,6 @@ const CustomCursor = () => {
         return "w-4 h-4 bg-[#D3FD50] opacity-80 pointer-events-none";
     }
   };
-
   return (
     <div
       id="custom-cursor"
@@ -68,5 +59,4 @@ const CustomCursor = () => {
     </div>
   );
 };
-
 export default CustomCursor;

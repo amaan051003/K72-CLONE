@@ -5,12 +5,15 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import Stairs from "./components/common/stairs.jsx";
 import Navbarcontext from "./context/Navcontext.jsx";
+import { HelmetProvider } from "react-helmet-async";
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <Stairs>
-      <Navbarcontext>
-        <App />
-      </Navbarcontext>
-    </Stairs>
-  </BrowserRouter>,
+  <HelmetProvider>
+    <BrowserRouter>
+      <Stairs>
+        <Navbarcontext>
+          <App />
+        </Navbarcontext>
+      </Stairs>
+    </BrowserRouter>
+  </HelmetProvider>,
 );
