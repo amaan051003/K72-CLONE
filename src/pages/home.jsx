@@ -2,7 +2,11 @@ import React from "react";
 import Vidio from "../components/home/vidio";
 import Homeherotext from "../components/home/homeherotext";
 import Homebottomtext from "../components/home/homebottomtext";
+<<<<<<< HEAD
 import { Helmet } from "react-helmet-async";
+=======
+
+>>>>>>> 98bb38252440555c67251c79e57e2eb3b9e30edc
 const Home = () => {
   return (
     <>

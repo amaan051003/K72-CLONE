@@ -24,6 +24,7 @@ html {
 html::-webkit-scrollbar {
   display: none;
 }
+<<<<<<< HEAD
 .custom-scrollbar {
   scrollbar-width: none;
 }
@@ -31,6 +32,8 @@ html::-webkit-scrollbar {
 .custom-scrollbar::-webkit-scrollbar {
   display: none;
 }
+=======
+>>>>>>> 98bb38252440555c67251c79e57e2eb3b9e30edc
 .moveX {
   animation-name: moveAnimation;
   animation-duration: 10s;
