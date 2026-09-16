@@ -4,46 +4,29 @@
   --font-light: font300, sans-serif;
   --font-medium: font500, sans-serif;
 }
-@font-face {
-  font-family: font300;
-  src: url(/Fonts/Lausanne-300.woff2);
-}
-@font-face {
-  font-family: font500;
-  src: url(/Fonts/Lausanne-500.woff2);
-}
+
+@font-face { font-family: font300; src: url(/Fonts/Lausanne-300.woff2); }
+@font-face { font-family: font500; src: url(/Fonts/Lausanne-500.woff2); }
 
 body {
-  color: white;
+  color: black;
   overflow-x: hidden;
 }
-html {
+
+html, .custom-scrollbar {
   scrollbar-width: none;
 }
-
-html::-webkit-scrollbar {
+html::-webkit-scrollbar, .custom-scrollbar::-webkit-scrollbar {
   display: none;
 }
-<<<<<<< HEAD
-.custom-scrollbar {
-  scrollbar-width: none;
-}
 
-.custom-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-=======
->>>>>>> 98bb38252440555c67251c79e57e2eb3b9e30edc
 .moveX {
-  animation-name: moveAnimation;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: moveAnimation 10s linear infinite;
 }
 
 .moveLink {
   opacity: 0;
-  transition: all ease 0.3s;
+  transition: opacity 0.3s ease;
 }
 
 .link:hover .moveLink {
@@ -51,10 +34,5 @@ html::-webkit-scrollbar {
 }
 
 @keyframes moveAnimation {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+  to { transform: translateX(-100%); }
 }

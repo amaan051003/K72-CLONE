@@ -59,7 +59,9 @@ const FullScreenNav = () => {
         });
       }
       return () => {
-        tl.kill();
+        if (tlRef.current) {
+          tlRef.current.kill();
+        }
       };
     },
     { scope: overlayRef, dependencies: [navOpen] },

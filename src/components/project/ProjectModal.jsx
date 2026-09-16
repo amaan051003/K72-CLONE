@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Lenis from "lenis";
 const ProjectModal = ({ project, onClose }) => {
+  const panelRef = useRef(null);
+  const contentRef = useRef(null);
   useEffect(() => {
     if (!project) return;
     document.body.style.overflow = "hidden";
@@ -10,17 +13,32 @@ const ProjectModal = ({ project, onClose }) => {
       { opacity: 1, duration: 0.3, ease: "power2.out" },
     );
     gsap.fromTo(
-      "#modal-panel",
+      panelRef.current,
       { y: "100%" },
       { y: "0%", duration: 0.5, ease: "power3.out" },
     );
+
+    const lenis = new Lenis({
+      wrapper: panelRef.current,
+      content: contentRef.current,
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    
+    const update = (time) => {
+      lenis.raf(time * 1000);
+    };
+    gsap.ticker.add(update);
+
     return () => {
+      lenis.destroy();
+      gsap.ticker.remove(update);
       document.body.style.overflow = "";
     };
   }, [project]);
   if (!project) return null;
   const handleClose = () => {
-    gsap.to("#modal-panel", { y: "100%", duration: 0.4, ease: "power3.in" });
+    gsap.to(panelRef.current, { y: "100%", duration: 0.4, ease: "power3.in" });
     gsap.to("#modal-backdrop", {
       opacity: 0,
       duration: 0.3,
@@ -36,9 +54,11 @@ const ProjectModal = ({ project, onClose }) => {
       />
       <div
         id="modal-panel"
+        ref={panelRef}
         data-lenis-prevent
         className="relative bottom-9 z-10 w-full max-w-6xl max-h-[90vh] overflow-y-auto bg-neutral-950 border-t md:border border-white/20 rounded-t-3xl md:rounded-3xl p-6 md:p-12 text-white shadow-2xl custom-scrollbar"
       >
+        <div ref={contentRef} className="w-full">
         <button
           onClick={handleClose}
           className="absolute top-6 right-6 h-12 w-12 rounded-full bg-white/10 hover:bg-[#D3FD50] hover:text-black flex items-center justify-center transition-all duration-300 z-20 cursor-pointer"
@@ -114,6 +134,7 @@ const ProjectModal = ({ project, onClose }) => {
             campaign generated immediate engagement across digital and
             out-of-home platforms.
           </p>
+        </div>
         </div>
       </div>
     </div>

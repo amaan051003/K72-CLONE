@@ -2,26 +2,16 @@ import React from "react";
 import Vidio from "../components/home/vidio";
 import Homeherotext from "../components/home/homeherotext";
 import Homebottomtext from "../components/home/homebottomtext";
-<<<<<<< HEAD
-import { Helmet } from "react-helmet-async";
-=======
 
->>>>>>> 98bb38252440555c67251c79e57e2eb3b9e30edc
 const Home = () => {
   return (
     <>
-      <Helmet>
-        <title>K72 - Creative Agency</title>
-        <meta
-          name="description"
-          content="K72 is a creative agency focused on branding, design, and digital experiences."
-        />
-      </Helmet>
       <div className="min-h-screen w-full relative select-none overflow-hidden flex flex-col justify-between">
-        <div className="fixed inset-0 z-0 opacity-40 mix-blend-screen scale-105 pointer-events-none">
+        <div className="fixed inset-0 z-0 opacity-90 mix-blend-screen scale-105 pointer-events-none">
           <Vidio />
         </div>
-        <div className="relative z-10 w-full flex-grow flex flex-col justify-between px-4 md:px-10 pt-20">
+
+        <div className="relative z-10 w-full grow flex flex-col justify-between px-4 md:px-10 ">
           <Homeherotext />
           <div className="w-full flex justify-end my-8 md:my-12">
             <div className="w-full md:w-5/12 text-right md:text-left font-light">

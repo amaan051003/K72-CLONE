@@ -8,12 +8,15 @@ import Fullscreennav from "./components/navigation/fullscreennav";
 import Stairs from "./components/common/stairs";
 import CustomCursor from "./components/common/CustomCursor";
 import SmoothScroll from "./components/common/SmoothScroll";
+import TimeDateDisplay from "./components/common/TimeDateDisplay";
+
 const App = () => {
   const location = useLocation();
   return (
     <SmoothScroll>
       <div className="bg-black text-white min-h-screen relative font-light selection:bg-[#D3FD50] selection:text-black">
         <CustomCursor />
+        <TimeDateDisplay />
         <Navbar />
         <Fullscreennav />
         <Stairs key={location.pathname}>

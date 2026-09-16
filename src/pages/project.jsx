@@ -4,7 +4,6 @@ import ProjectCard from "../components/project/ProjectCard";
 import ProjectModal from "../components/project/ProjectModal";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { Helmet } from "react-helmet-async";
 gsap.registerPlugin(ScrollTrigger);
 const projectList = [
   {
@@ -97,13 +96,7 @@ const Project = () => {
   }
   return (
     <>
-      <Helmet>
-        <title>Projects - K72</title>
-        <meta
-          name="description"
-          content="Explore our latest projects and case studies."
-        />
-      </Helmet>
+
       <div
         ref={containerRef}
         className="min-h-screen px-4 md:px-12 pt-28 md:pt-36 pb-32"

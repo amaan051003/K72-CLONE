@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Helmet } from "react-helmet-async";
 const teamMembers = [
   {
     name: "Carl",
@@ -135,13 +134,7 @@ const Agence = () => {
   );
   return (
     <>
-      <Helmet>
-        <title>Agence - K72</title>
-        <meta
-          name="description"
-          content="Meet the K72 team and learn more about our culture."
-        />
-      </Helmet>
+
       <div
         ref={containerRef}
         className="min-h-screen bg-black text-white px-4 md:px-12 pt-28 md:pt-36"
@@ -234,7 +227,7 @@ const Agence = () => {
               ideas to life.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="h-fit grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {teamMembers.map((member, idx) => (
               <div
                 key={idx}

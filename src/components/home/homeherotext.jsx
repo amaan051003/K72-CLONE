@@ -29,9 +29,9 @@ const Homeherotext = () => {
   return (
     <div
       ref={containerRef}
-      className="font-light text-center text-white select-none mt-16 md:mt-24"
+      className="font-light text-center text-white select-none mt-6 md:mt-6"
     >
-      <div className="hero-line text-[10vw] md:text-[9vw] flex items-center justify-center uppercase leading-[0.9] tracking-tight">
+      <div className="hero-line text-[10vw] md:text-[9vw] font-bold flex items-center justify-center uppercase leading-[0.9] tracking-tight">
         The spark for
       </div>
       <div className="hero-line text-[10vw] md:text-[9vw] flex items-center justify-center uppercase leading-[0.9] tracking-tight gap-2 md:gap-4">
